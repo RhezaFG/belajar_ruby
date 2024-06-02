@@ -1,0 +1,29 @@
+
+<div class="main posts-index">
+    <div class="container">
+    <p><%= flash[:pesan] %></p>
+    <a href="/cobacoba/input">Input Data</a>
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>Judul</th>
+            <th>Deskripsi</th>
+            <th>Action</th>
+        </tr>
+        <% 
+        no=0 
+        @data.each do |value| %>
+        <tr>
+            <td><%= no=no+1 %></td>
+            <td><%= value.judul %></td>
+            <td><%= value.deskripsi %></td>
+            <td> 
+                <a href="/cobacoba/detail/<%= value.id %>">Detail</a>
+                <a href="/cobacoba/edit/<%= value.id %>">Edit</a>
+                <a href="/cobacoba/delete/<%= value.id %>" OnClick= "return confirm('Yakin hapus?')">Delete</a>
+            </td>
+        </tr>
+        <%end%>
+    </table>          
+    </div>
+</div>

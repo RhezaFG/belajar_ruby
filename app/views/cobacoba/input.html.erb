@@ -1,0 +1,20 @@
+<div class="main posts-new">
+    <div class="container">
+
+        <%= form_tag("/cobacoba/create") do %>
+        <div class="form">
+            <div class="form-body">
+                <a label>Judul</a>
+                <input name="judul" required>
+
+                <a label>Deskripsi</a>
+                <textarea name="deskripsi" required></textarea>
+                <button type="submit">Simpan</button>
+                <a href="/cobacoba">Kembali</a>
+            </div>
+        </div>
+
+        <%end%>
+
+    </div>
+</div>

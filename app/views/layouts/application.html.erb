@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+  <div class="flex flex-col">
+  <header>
+    <div class="header-logo">
+        <a href="/">website gweh</a>
+    </div>
+
+    <div class="header-menus">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/artikel">artikel</a>
+        </li>
+        <li>
+            <a href="/cobacoba/index">Cobacoba</a>
+        </li>
+        <li>
+            <a href="/books">Books</a>
+        </li>
+        <li>
+           <a href="/about">About</a>
+        </li>
+    </div>
+</header>
+    <div class="w-full">
+    <%= yield %>
+    </div>
+  </div>
+  </body>
+</html>
