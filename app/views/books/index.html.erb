@@ -1,6 +1,6 @@
 <div class="w-full mt-20">
   <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <p class="py-2 px-3 bg-teal-500 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
   <% content_for :title, "Books" %>
@@ -26,6 +26,9 @@
                 <th scope="col" class="px-6 py-3">
                     Detail
                 </th>
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
             </tr>
         </thead>
 <% 
@@ -45,6 +48,10 @@ no=0
                 <td class="px-6 py-4">
                     <%= link_to "Show this book", book, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-		block font-medium" %>
                 </td>
+                <td>
+                 <%= button_to "Delete", book, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-red-500 text-white" %>
+                 <%= link_to "Edit", edit_book_path(book), class: "mt-2 rounded-lg py-3 px-5 bg-lime-400 inline-block text-white" %>
+                </td>  
             </tr>
             <%end%>
         </tbody>
