@@ -10,33 +10,33 @@
     <%= javascript_importmap_tags %>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-
+  
   <body>
   <div class="flex flex-col">
   <header>
-    <div class="header-logo">
+    <div class="header-logo font-bold underline ">
         <a href="/">website gweh</a>
     </div>
 
-    <div class="header-menus">
-        <li>
+    <div class="header-menus font-bold underline ">
+        <li class="font-bold underline">
             <a href="/">Home</a>
         </li>
-        <li>
-            <a href="/artikel">artikel</a>
+        <li class="font-bold underline">
+            <a href="/artikel">Artikel</a>
         </li>
-        <li>
+        <li class="font-bold underline">
             <a href="/cobacoba/index">Cobacoba</a>
         </li>
-        <li>
+        <li class="font-bold underline">
             <a href="/books">Books</a>
         </li>
-        <li>
+        <li class="font-bold underline">
            <a href="/about">About</a>
         </li>
     </div>
 </header>
-    <div class="w-full">
+    <div class="w-full bg-sky-300">
     <%= yield %>
     </div>
   </div>
