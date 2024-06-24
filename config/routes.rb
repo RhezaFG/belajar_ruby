@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  resources :books
-  get 'cobacoba/index'
+  resources :authors
+  resources :books, path: "buku"
+  resources :cobacoba
   get 'index' => 'home#index'
   get 'cobacoba' => 'cobacoba#index'
   get 'artikel' => 'home#artikel'
   get 'about' => 'home#about'
   get '/' => 'home#index'
-  get 'books'=> 'books#index'
   get 'cobacoba/input' => 'cobacoba#input'
   post 'cobacoba/create' => 'cobacoba#create'
   post 'cobacoba/update/:id' => 'cobacoba#update'

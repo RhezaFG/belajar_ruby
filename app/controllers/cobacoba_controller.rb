@@ -2,10 +2,10 @@ class CobacobaController < ApplicationController
   def index
     @cobacoba1="Belajar Mengaji" 
     @cobacoba2="Daftar Iqro'" 
-   @data = Cobacoba.all
+    @data = Cobacoba.all
   end
 
-  def detail
+  def show
       @data = Cobacoba.find_by(id: params[:id])
   end
   def input

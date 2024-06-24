@@ -12,31 +12,35 @@
   </head>
   
   <body>
-  <div class="flex flex-col">
-  <header>
-    <div class="header-logo font-bold underline ">
+   <div class="flex flex-col">
+  <header class="flex flex-row justify-between items-center bg-blue-900 px-6 py-5">
+    <div class="header-logo font-bold underline">
         <a href="/">website gweh</a>
     </div>
 
-    <div class="header-menus font-bold underline ">
-        <li class="font-bold underline">
+    <div class="flex flex-row gap-2 py-5 text-white font-light">
+        <div class="font-bold">
             <a href="/">Home</a>
-        </li>
-        <li class="font-bold underline">
+        </div>
+        <div class="hover:font-light">
             <a href="/artikel">Artikel</a>
-        </li>
-        <li class="font-bold underline">
-            <a href="/cobacoba/index">Cobacoba</a>
-        </li>
-        <li class="font-bold underline">
-            <a href="/books">Books</a>
-        </li>
-        <li class="font-bold underline">
+        </div>
+        <div class="hover:font-bold">
+            <a href="/cobacoba">Cobacoba</a>
+        </div>
+        <div class="hover:font-bold">
+            <a href=<%= books_path%>>Books</a>
+        </div>
+        <div class="hover:font-bold">
+            <a href=<%= authors_path%>>Authors</a>
+        </div>
+        <div class="hover:font-bold">
            <a href="/about">About</a>
-        </li>
+        </div>
     </div>
-</header>
-    <div class="w-full bg-sky-300">
+ </header>
+  </div>
+    <div class="w-full">
     <%= yield %>
     </div>
   </div>
