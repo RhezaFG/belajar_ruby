@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  
+  <body>
+   <div class="flex flex-col">
+  <header class="flex flex-row justify-between items-center bg-blue-900 px-6 py-5">
+    <div class="header-logo font-bold underline">
+        <a href="/">website gweh</a>
+    </div>
+
+    <div class="flex flex-row gap-2 py-5 text-white font-light">
+        <div class="font-bold">
+            <a href="/">Home</a>
+        </div>
+        <div class="hover:font-light">
+            <a href="/artikel">Artikel</a>
+        </div>
+        <div class="hover:font-bold">
+            <a href="/cobacoba">Cobacoba</a>
+        </div>
+        <div class="hover:font-bold">
+            <a href=<%= books_path%>>Books</a>
+        </div>
+        <div class="hover:font-bold">
+            <a href=<%= authors_path%>>Authors</a>
+        </div>
+        <div class="hover:font-bold">
+           <a href="/about">About</a>
+        </div>
+    </div>
+ </header>
+  </div>
+    <div class="w-full">
+    <%= yield %>
+    </div>
+  </div>
+  </body>
+</html>
