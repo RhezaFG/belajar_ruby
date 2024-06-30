@@ -1,21 +1,62 @@
-<div class="w-full">
+<div class="w-full mt-20 px-6">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
   <% content_for :title, "Authors" %>
 
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center py-4">
     <h1 class="font-bold text-4xl">Authors</h1>
     <%= link_to "New author", new_author_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="authors" class="min-w-full">
-    <% @authors.each do |author| %>
-      <%= render author %>
-      <p>
-        <%= link_to "Show this author", author, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    No.
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Author
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Gender
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Detail
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+<% 
+no=0
+@authors.each do |author| %>
+        <tbody>
+            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <%= no=no+1 %>
+                </th>
+                <td class="px-6 py-4">
+                    <%= author.name %>
+                </td>
+                <td class="px-6 py-4">
+                    <%= author.gender %>
+                </td>
+                <td class="px-6 py-4">
+                    <%= link_to "Show this author", author, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-		block font-medium" %>
+                </td>
+                <td>
+                <div class=" flex flex-row gap-4">
+                 <%= button_to "Delete", author, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-red-500 text-white" %>
+                 <%= link_to "Edit", edit_author_path(author), class: "mt-2 rounded-lg py-3 px-5 bg-lime-400 inline-block text-white" %>
+                 </div>
+                </td>  
+            </tr>
+            <%end%>
+        </tbody>
+    </table>
   </div>
 </div>
