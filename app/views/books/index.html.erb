@@ -24,6 +24,9 @@
                     Author
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    Phone Number
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Detail
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -43,7 +46,10 @@ no=0
                     <%= book.title %>
                 </td>
                 <td class="px-6 py-4">
-                    <%= book.author %>
+                    <%= book.author.name %>
+                </td>
+                <td class="px-6 py-4">
+                    <%= book.author.phone_number %>
                 </td>
                 <td class="px-6 py-4">
                     <%= link_to "Show this book", book, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-		block font-medium" %>
