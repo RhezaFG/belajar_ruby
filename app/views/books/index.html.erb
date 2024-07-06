@@ -1,4 +1,4 @@
-<div class="w-full mt-20 px-6">
+<div class="flex flex-col justify-start w-full px-6">
   <% if notice.present? %>
     <p class="py-2 px-3 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
@@ -9,7 +9,7 @@
     <h1 class="font-bold text-4xl">Books</h1>
     <%= link_to "New book", new_book_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
-
+<div class="flex flex-col justify-between grow">
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -64,5 +64,9 @@ no=0
             <%end%>
         </tbody>
     </table>
+  </div>
+  <div class="py-4 items-center justify-center">
+  <%= paginate @books %>
+  </div>
   </div>
 </div>

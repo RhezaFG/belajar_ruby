@@ -17,8 +17,8 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :author %>
-    <%= form.text_field :author, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :author_id %>
+    <%= form.collection_select(:author_id, Author.order(:name), :id, :name, {prompt: true}, {class: 'block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full', required: "required"})%>
   </div>
 
   <div class="my-5">
