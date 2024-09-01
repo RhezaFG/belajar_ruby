@@ -3,7 +3,8 @@ class AuthorsController < ApplicationController
 
   # GET /authors or /authors.json
   def index
-    @authors = Author.all
+    @q = Author.ransack(params[:q])
+    @authors = @q.result(distinct: true)
   end
 
   # GET /authors/1 or /authors/1.json
@@ -66,5 +67,8 @@ class AuthorsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def author_params
       params.require(:author).permit(:name, :phone_number, :date_of_birth, :gender, :address)
+    end
+    def self.ransackable_associations(auth_object = nil)
+      ["books"]
     end
 end
