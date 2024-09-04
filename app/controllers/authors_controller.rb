@@ -5,6 +5,7 @@ class AuthorsController < ApplicationController
   def index
     @q = Author.ransack(params[:q])
     @authors = @q.result(distinct: true)
+    @authors = @authors.page params[:page]
   end
 
   # GET /authors/1 or /authors/1.json
@@ -18,11 +19,14 @@ class AuthorsController < ApplicationController
 
   # GET /authors/1/edit
   def edit
+    @author.avatar.attach(params[:avatar])
   end
 
   # POST /authors or /authors.json
   def create
     @author = Author.new(author_params)
+    session[:author_id] = author.id
+    redirect_to root_path
 
     respond_to do |format|
       if @author.save
@@ -31,6 +35,7 @@ class AuthorsController < ApplicationController
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @author.errors, status: :unprocessable_entity }
+        
       end
     end
   end
