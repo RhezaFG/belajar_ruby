@@ -3,7 +3,8 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = Book.order(:title)
+    @q = Book.ransack(params[:q])
+    @books = @q.result(distinct: true)
     @books = @books.page params[:page]
   end
 
@@ -66,6 +67,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :author_id, :publication_year)
+      params.require(:book).permit(:title, :author_id, :publication_year, :pic)
     end
 end

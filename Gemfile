@@ -72,3 +72,4 @@ gem "tailwindcss-rails", "~> 2.6"
 gem 'kaminari'
 gem 'ransack'
 gem 'faker'
+# gem "byebug"

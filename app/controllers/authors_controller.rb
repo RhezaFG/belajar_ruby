@@ -19,7 +19,6 @@ class AuthorsController < ApplicationController
 
   # GET /authors/1/edit
   def edit
-    @author.avatar.attach(params[:avatar])
   end
 
   # POST /authors or /authors.json
@@ -71,7 +70,7 @@ class AuthorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def author_params
-      params.require(:author).permit(:name, :phone_number, :date_of_birth, :gender, :address)
+      params.require(:author).permit(:name, :phone_number, :date_of_birth, :gender, :address, :avatar)
     end
     def self.ransackable_associations(auth_object = nil)
       ["books"]
