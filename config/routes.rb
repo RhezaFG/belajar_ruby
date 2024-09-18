@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :model, controllers: {
+    sessions: 'model/sessions' 
+  }
   resources :authors
   resources :books, path: "buku"
-  resources :cobacoba, path: "cobacoba"
+  resources :cobacoba, path: "/"
   resources :authors, path: "author"
   get 'cobacoba/input' => 'cobacoba#input'
   post 'cobacoba/create' => 'cobacoba#create'

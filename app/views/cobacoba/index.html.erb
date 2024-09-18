@@ -1,29 +1,10 @@
-
-<div class="main posts-index bg-blue-900">
-    <div class="container text-white">
-    <p><%= flash[:pesan] %></p>
-    <a href="/cobacoba/input">Input Data</a>
-    <table>
-        <tr>
-            <th>No.</th>
-            <th>Judul</th>
-            <th>Deskripsi</th>
-            <th>Action</th>
-        </tr>
-        <% 
-        no=0 
-        @data.each do |value| %>
-        <tr>
-            <td><%= no=no+1 %></td>
-            <td><%= value.judul %></td>
-            <td><%= value.deskripsi %></td>
-            <td> 
-                <a href="<%= cobacoba_path(value)%>">Detail</a>
-                <a href="<%= edit_cobacoba_path(id: value.id)%>">Edit</a>
-                <a href="/cobacoba/delete/<%= value.id %>" OnClick= "return confirm('Yakin hapus?')">Delete</a>
-            </td>
-        </tr>
-        <%end%>
-    </table>          
+<main class="h-full w-full flex flex-col">
+<div class="w-full h-full h-screen static flex flex-col items-center justify-center">
+<div class="flex flex-col items-center justify-center gap-3 ">
+    <div class="flex flex-row items-center justify-center gap-3">
+        <div class="text-black text-5xl lg:text-7xl md:text-7xl text-center font-normal">Hi, I'm</div>
+        <div class="text-black  text-5xl lg:text-7xl md:text-7xl text-center font-bold">Rheza</div>
+    </div>
+    <div class="text-black  text-sm lg:text-base md:text-base px-8 text-center">An undergraduate student who recently studied programming
     </div>
 </div>

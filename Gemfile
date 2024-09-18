@@ -73,3 +73,5 @@ gem 'kaminari'
 gem 'ransack'
 gem 'faker'
 # gem "byebug"
+
+gem "devise", "~> 4.9"
