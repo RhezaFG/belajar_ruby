@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Model::SessionsController < Devise::SessionsController
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in

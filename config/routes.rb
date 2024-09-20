@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :model, controllers: {
     sessions: 'model/sessions' 
   }
+  devise_scope :user do
+    get 'sign_in', to: 'devise/sessions#new'
+  end
+  devise_for :users, skip: :all
   resources :authors
   resources :books, path: "buku"
-  resources :cobacoba, path: "/"
+  root to: 'cobacoba#index'
   resources :authors, path: "author"
   get 'cobacoba/input' => 'cobacoba#input'
   post 'cobacoba/create' => 'cobacoba#create'
