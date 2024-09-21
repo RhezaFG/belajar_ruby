@@ -15,9 +15,10 @@ class Model::SessionsController < Devise::SessionsController
   # end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+   def sign_out
+    session[:user_id] = nil     
+    redirect_to '/'
+   end
 
   # protected
 
